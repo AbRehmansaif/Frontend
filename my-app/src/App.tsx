@@ -1,16 +1,17 @@
-import { useState } from 'react'
-import './App.css'
+import { Routes, Route } from 'react-router-dom';
+import MainPage from './pages/Mainpage';
+import AboutPage from './pages/AboutPage';
+import ContactPage from './pages/ContactPage';
 
-function App() {
-  const [count, setCount] = useState(0)
-
+const App = () => {
   return (
-    <div className="min-h-screen bg-gray-100 flex items-center justify-center">
-      <h1 className="text-4xl font-bold text-blue-600">
-        Tailwind + React + TypeScript + Vite 🚀
-      </h1>
-    </div>
-  )
-}
+    
+    <Routes>
+      <Route path="/" element={<MainPage />} />
+      <Route path='/about' element={<AboutPage />} />
+      <Route path='/contact' element={<ContactPage />} />
+    </Routes>
+  );
+};
 
-export default App
+export default App;
